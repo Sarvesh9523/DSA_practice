@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module type="JAVA_MODULE" version="4">
+  <component name="NewModuleRootManager" inherit-compiler-output="true">
+    <exclude-output />
+    <content url="file://$MODULE_DIR$">
+      <sourceFolder url="file://$MODULE_DIR$/ARRAYS" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Binary search interview questions practice" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/BitManipulation" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Linkedlist" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/OOPs" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Only random leetcode question practice" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Recursion" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/STRconcept" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Sorting Algorithm" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Time Complexity" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/loop , switch , function" isTestSource="false" />
+    </content>
+    <orderEntry type="inheritedJdk" />
+    <orderEntry type="sourceFolder" forTests="false" />
+  </component>
+</module>

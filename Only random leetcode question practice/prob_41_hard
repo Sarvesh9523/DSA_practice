@@ -1,0 +1,29 @@
+class prob_41_hard {
+    public int firstMissingPositive(int[] nums) {
+        int i = 0;
+        while (i < nums.length) {
+            int correct_index = nums[i]-1; // it is because the given array contains 0 also and the range is from 0 to N .
+            if (nums[i] > 0 && nums[i] <= nums.length && nums[i] != nums[correct_index]) {
+                swap(nums, i, correct_index);
+
+            } else {
+                i++;
+            }
+
+        }
+         // searching for the missing element
+         for (int index = 0; index < nums.length; index++) {
+            if (nums[index] != index+1) {
+                return index+1; 
+            }
+        }
+        return nums.length+1 ;
+        
+    }
+     static void swap(int[] nums, int first, int second) {
+        int temp = nums[first];
+        nums[first] = nums[second];
+        nums[second] = temp;
+
+    }
+}

@@ -1,0 +1,35 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Insertion_Sort",
+            "request": "launch",
+            "mainClass": "Insertion_Sort",
+            "projectName": "Sorting Algorithm_c66adcca"
+        },
+        {
+            "type": "java",
+            "name": "insertion_in_array",
+            "request": "launch",
+            "mainClass": "insertion_in_array",
+            "projectName": "Sorting Algorithm_c66adcca"
+        },
+        {
+            "type": "java",
+            "name": "Current File",
+            "request": "launch",
+            "mainClass": "${file}"
+        },
+        {
+            "type": "java",
+            "name": "BubbleSort",
+            "request": "launch",
+            "mainClass": "BubbleSort",
+            "projectName": "Sorting Algorithm_c66adcca"
+        }
+    ]
+}
