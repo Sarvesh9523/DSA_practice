@@ -5,6 +5,8 @@ public class Longest_Subarray {
         int k = 14;
         int[] arr = { 2, 5, 1, 7, 10 };
         System.out.println(solution(arr, k));
+        System.out.println(solution2(arr, k));
+        System.out.println(allLongestSubarrays(arr, k));
     }
 
     // find maximum length of array where sum <= k
@@ -23,7 +25,7 @@ public class Longest_Subarray {
         return maxLen;
     }
 
-    // find maximum subarray where sum <= k
+    // find first maximum subarray where sum <= k
     static List<Integer> solution2(int[] arr, int k) {
         int sum = 0;
         int left = 0;
@@ -50,6 +52,43 @@ public class Longest_Subarray {
         }
 
         return ans;
+    }
+
+    // find all allLongestSubarrays
+    static List<List<Integer>> allLongestSubarrays(int[] arr, int k){
+        int left = 0;
+        int sum = 0;
+        int maxLen = 0;
+        List<List<Integer>> result = new ArrayList<>();
+        for(int right=0; right < arr.length; right++){
+            sum += arr[right] ;
+            while(sum > k){
+                sum -= arr[left];
+                left++;
+            }
+            int currenLen = right - left + 1 ;
+            if(currenLen > maxLen){
+                maxLen = currenLen ;
+                result.clear() ;
+                List<Integer> temp = new ArrayList<>();
+                for(int i = left; i<=right; i++){
+                    temp.add(arr[i]);
+
+                }
+                result.add(temp) ;
+
+            }else if (currenLen == maxLen) {
+                List<Integer> temp = new ArrayList<>();
+                for (int i = left; i <= right; i++) {
+                    temp.add(arr[i]);
+                }
+
+                result.add(temp);
+            }
+        }
+
+        return result ;
+
     }
 
 }
