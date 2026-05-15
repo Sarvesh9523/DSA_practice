@@ -3,13 +3,13 @@ public class permutation {
     public static void main(String[] args) {
         Permutation("", "abc");
 
-        System.out.println("-----------Solve same question with ArrayList concept-----------") ;
+        // System.out.println("-----------Solve same question with ArrayList concept-----------") ;
         
-        ArrayList<String> ans = PermutationList("", "abc");
-        System.out.println(ans);
+        // ArrayList<String> ans = PermutationList("", "abc");
+        // System.out.println(ans);
 
-        System.out.println("-----------The total permutation is -----------") ;
-        System.out.println(permutationcount("", "abc"));
+        // System.out.println("-----------The total permutation is -----------") ;
+        // System.out.println(permutationcount("", "abc"));
 
 
         
