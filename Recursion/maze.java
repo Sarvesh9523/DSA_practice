@@ -34,7 +34,7 @@ public class maze {
 
     }
 
-    //Print using list
+    //Print all path using Arraylist
     static ArrayList<String> totalPathList(String p, int r, int c){
         if(r == 1 && c == 1){
             ArrayList<String> paths = new ArrayList<>();
