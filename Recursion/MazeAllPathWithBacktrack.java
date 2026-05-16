@@ -9,7 +9,10 @@ public class MazeAllPathWithBacktrack {
             {true, true, true}
 
         }; 
+
+        int[][] path = new int[maze.length][maze[0].length];
         System.out.println(allPath("", maze, 0, 0));
+        AllpathPrint("", maze, 0,0, path, 1);
         
     }
     static ArrayList<String> allPath(String p, boolean[][] maze, int r, int c){
