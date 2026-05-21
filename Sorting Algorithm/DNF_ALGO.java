@@ -15,7 +15,7 @@ public class DNF_ALGO {  // DNF stands for Dutch National Flag .
         first part of array contains only "Zero" which range is 0 to low-1.
         Second part of array contains only "ONE" which range is low to mid-1.
         Third part of array contain only "Three" which range is high+1 to n-1
-        and the range of given array is mid to high . and the array is {0,0,1,2,0,2,1,2,1,0,0,1,2} .
+        and the range of given array is mid to high . and the array is {0,0,1,2,0,2,1,2,1,0,0,1,2}. 
         */ 
         int low = 0 , mid = 0 , high = n-1 ;
         while(mid <= high){
