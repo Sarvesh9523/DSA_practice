@@ -157,7 +157,90 @@ Maximum possible score
 import java.util.*;
 
 public class secondQuestion {
+    // public static void main(String[] args) {
+    // Scanner sc = new Scanner(System.in);
+
+    // int N = sc.nextInt();
+    // int B = sc.nextInt();
+
+    // int[] arr = new int[N];
+
+    // for (int i = 0; i < N; i++) {
+    // arr[i] = sc.nextInt();
+    // }
+
+    // System.out.println(solve(0, arr, 0, B));
+    // }
+    public static int solve(int idx, int[] up, int prevSign, int B) {
+        if (idx == up.length) {
+            return 0;
+        }
+        long skip = solve(idx + 1, up, prevSign, B);
+        long pick = Long.MIN_VALUE;
+        int curr = up[idx];
+        int currSign = (curr > 0) ? 1 : -1;
+        if (prevSign == 0 || prevSign != currSign) {
+            long bonus = 0;
+            if (prevSign != 0) {
+                bonus = B;
+            }
+            pick = curr + bonus + solve(idx + 1, up, currSign, B);
+        }
+        return Math.max((int) pick, (int) skip);
+    }
+
+    // Second and best appraoch with TC= O(n) ans SC = O(1)
+
+    public static long solve2(int N, int B, int[] arr) {
+
+        long NEG_INF = Long.MIN_VALUE / 2;
+
+        // best subsequence ending with positive
+        long bestPos = NEG_INF;
+
+        // best subsequence ending with negative
+        long bestNeg = NEG_INF;
+
+        long ans = 0;
+
+        for (int x : arr) {
+
+            // current number is positive
+            if (x > 0) {
+
+                // start new subsequence
+                long newPos = x;
+
+                // extend negative subsequence
+                if (bestNeg != NEG_INF) {
+                    newPos = Math.max(newPos, bestNeg + x + B);
+                }
+
+                bestPos = Math.max(bestPos, newPos);
+            }
+
+            // current number is negative
+            else {
+
+                // start new subsequence
+                long newNeg = x;
+
+                // extend positive subsequence
+                if (bestPos != NEG_INF) {
+                    newNeg = Math.max(newNeg, bestPos + x + B);
+                }
+
+                bestNeg = Math.max(bestNeg, newNeg);
+            }
+
+            ans = Math.max(ans, Math.max(bestPos, bestNeg));
+        }
+
+        return ans;
+    }
+
     public static void main(String[] args) {
+
         Scanner sc = new Scanner(System.in);
 
         int N = sc.nextInt();
@@ -169,24 +252,7 @@ public class secondQuestion {
             arr[i] = sc.nextInt();
         }
 
-        System.out.println(solve(0, arr, 0, B));
+        System.out.println(solve2(N, B, arr));
     }
-    public static int solve(int idx, int[] up, int prevSign, int B){
-        if(idx == up.length){
-            return 0;
-        }
-        long skip = solve(idx + 1, up, prevSign, B) ;
-        long pick = Long.MIN_VALUE;
-        int curr = up[idx] ;
-        int currSign = (curr > 0)? 1:-1 ;
-        if(prevSign == 0 || prevSign != currSign){
-            long bonus = 0;
-            if(prevSign != 0){
-                bonus = B ;
-            }
-            pick = curr + bonus + solve(idx + 1, up, currSign, B) ;
-        }
-        return Math.max((int) pick, (int) skip) ;
-    }
-    
+
 }

@@ -3,11 +3,11 @@ import java.util.*;
 public class righAngle {
     public static void main(String[] args) {
         ReverseTriangle(4, 0);
-        Triangle(4, 0);
+        // Triangle(4, 0);
         
     }
 
-    static void ReverseTriangle(int r, int c){
+    static void ReverseTriangle(int r, int c){ 
         if(r == 0) return ;
         if(c < r){
             System.out.print("*");
