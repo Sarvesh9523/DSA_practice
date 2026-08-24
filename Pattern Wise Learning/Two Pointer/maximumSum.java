@@ -1,4 +1,4 @@
-/*The approach is to solve this problem using Two Pointer method for fixed window size of k */
+/*The approach is to solve this problem using Two Pointer sliding window method for fixed window size of k */
 
 public class maximumSum {
     public static void main(String[] args) {
@@ -20,6 +20,7 @@ public class maximumSum {
         int maxsum = sum;
 
         for (int i = k; i < n; i++) {
+            // now slide the window with adding next and removing left most element 
             sum += arr[i]; // add next element
             sum -= arr[i - k]; // remove left element
             maxsum = Math.max(maxsum, sum);
